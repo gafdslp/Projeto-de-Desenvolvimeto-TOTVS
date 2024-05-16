@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Ohasjwq4246whKqy/f4qwCwqZan5abKy0PXSxBaM/WSPtIzz8R9WEl+liWHNRI8ftAismOYVgCoOsp/b2QOqoA==",
+  "dgSpecHash": "KQY+DpXDqSM=",
   "success": true,
   "projectFilePath": "C:\\Users\\guigu\\OneDrive\\Área de Trabalho\\ASP.NET\\Projeto de Desenvolvimeto TOTVS\\Projeto de Desenvolvimeto TOTVS\\Projeto de Desenvolvimeto TOTVS.csproj",
   "expectedPackageFiles": [
@@ -79,7 +79,11 @@
     "C:\\Users\\guigu\\.nuget\\packages\\system.text.json\\8.0.0\\system.text.json.8.0.0.nupkg.sha512",
     "C:\\Users\\guigu\\.nuget\\packages\\system.threading.channels\\6.0.0\\system.threading.channels.6.0.0.nupkg.sha512",
     "C:\\Users\\guigu\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-    "C:\\Users\\guigu\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
+    "C:\\Users\\guigu\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
+    "C:\\Users\\guigu\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.2\\microsoft.netcore.app.ref.8.0.2.nupkg.sha512",
+    "C:\\Users\\guigu\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.2\\microsoft.windowsdesktop.app.ref.8.0.2.nupkg.sha512",
+    "C:\\Users\\guigu\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.2\\microsoft.aspnetcore.app.ref.8.0.2.nupkg.sha512",
+    "C:\\Users\\guigu\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.2\\microsoft.netcore.app.host.win-x64.8.0.2.nupkg.sha512"
   ],
   "logs": []
 }
