@@ -5,3 +5,180 @@
 <div class="text-center">
     <h1 class="display-4">Criar Cadastro Dinamico</h1>
 </div>
+
+<div id="form-container" class="container"></div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var formContainer = document.getElementById('form-container');
+
+        
+        function createForm() {
+            var form = document.createElement('form');
+            form.classList.add('row', 'g-3', 'needs-validation');
+            form.setAttribute('method', 'post');
+            form.setAttribute('action', '/Home/CreateDynamic');
+            form.setAttribute('novalidate', '');
+
+           
+            var fields = ['Nome', 'Sobrenome', 'Email', 'DataNascimento', 'Senha', 'ConfirmarSenha'];
+
+            fields.forEach(function (fieldName) {
+                var div = document.createElement('div');
+                div.classList.add('col-md-6', 'form-group');
+
+                var label = document.createElement('label');
+                label.setAttribute('for', fieldName);
+                label.classList.add('form-label');
+                label.textContent = fieldName;
+
+                var input = document.createElement('input');
+                input.setAttribute('type', fieldName === 'DataNascimento' ? 'date' : fieldName === 'Email' ? 'Email' : fieldName === 'Senha' ? 'password' : fieldName === 'ConfirmarSenha' ? 'password' : 'text');
+                input.setAttribute('class', 'form-control');
+                input.setAttribute('name', fieldName);
+                input.setAttribute('id', fieldName);
+                input.setAttribute('required', '');
+
+
+                if (fieldName === 'Nome') {
+                    input.setAttribute('minlength', '3');
+                    input.addEventListener('input', function () {
+                        if (input.validity.valid) {
+                            input.classList.remove('is-invalid');
+                            input.classList.add('is-valid');
+                            validFeedback.textContent = 'Tudo certo!';
+                        } else {
+                            input.classList.add('is-invalid');
+                            invalidFeedback.textContent = 'O nome deve conter no minimo 03 caracteres';
+                        }
+                    });
+
+                }
+
+                if (fieldName === 'Sobrenome') {
+                    input.setAttribute('minlength', '3');
+                    input.addEventListener('input', function () {
+                        if (input.validity.valid) {
+                            input.classList.remove('is-invalid');
+                            input.classList.add('is-valid');
+                            validFeedback.textContent = 'Perfeito!';
+                        } else {
+                            input.classList.add('is-invalid');
+                            invalidFeedback.textContent = 'O sobrenome deve conter no minimo 03 caracteres';
+                        }
+                    });
+                }
+
+                if (fieldName === 'Email') {
+                    input.setAttribute('type', 'email'); 
+                    input.addEventListener('input', function () {
+                        if (input.validity.valid) {
+                            input.classList.remove('is-invalid');
+                            input.classList.add('is-valid');
+                            validFeedback.textContent = 'Email válido!'; 
+                        } else {
+                            input.classList.add('is-invalid');
+                            invalidFeedback.textContent = 'Por favor, insira um email válido';
+                        }
+                    });
+                }
+
+
+                if (fieldName === 'DataNascimento') {
+                    input.setAttribute('minlength', '1');
+                    input.addEventListener('input', function () {
+                        if (input.validity.valid) {
+                            input.classList.remove('is-invalid');
+                            input.classList.add('is-valid');
+                            validFeedback.textContent = 'Pronto!';
+                        } else {
+                            input.classList.add('is-invalid');
+                            invalidFeedback.textContent = 'Ops, este campo não pode ficar vazio';
+                        }
+                    });
+                }
+
+                if (fieldName === 'Senha') {
+                    input.setAttribute('minlength', '6');
+                    input.addEventListener('input', function () {
+                        if (input.validity.valid) {
+                            input.classList.remove('is-invalid');
+                            input.classList.add('is-valid');
+                            validFeedback.textContent = 'Pronto!';
+                        } else {
+                            input.classList.add('is-invalid');
+                            invalidFeedback.textContent = 'A senha deve conter no mínimo 6 caracteres.';
+                        }
+                    });
+                }
+
+                if (fieldName === 'ConfirmarSenha') {
+                    
+                    input.addEventListener('input', function () {
+
+                        
+                        const senhaInput = document.getElementById('Senha');
+                        if (input.value !== senhaInput.value) {
+                            input.classList.add('is-invalid');
+                            invalidFeedback.textContent = 'As senhas não coincidem!';
+                            validFeedback.textContent = '';
+                        } else {
+                            input.classList.remove('is-invalid');
+                            input.classList.add('is-valid');
+                            invalidFeedback.textContent = '';
+                            validFeedback.textContent = 'As senhas são iguais!';
+                        }
+                    });
+                }
+
+                var validFeedback = document.createElement('div');
+                validFeedback.classList.add('valid-feedback');
+                validFeedback.textContent = '';
+
+                var invalidFeedback = document.createElement('div');
+                invalidFeedback.classList.add('invalid-feedback');
+                invalidFeedback.textContent = 'Este campo não pode ficar vazio';
+
+                div.appendChild(label);
+                div.appendChild(input);
+                div.appendChild(invalidFeedback);
+                div.appendChild(validFeedback);
+
+                form.appendChild(div);
+            });
+
+    
+            var buttonDiv = document.createElement('div');
+            buttonDiv.classList.add('col-12', 'd-flex', 'justify-content-between');
+
+            var submitButton = document.createElement('button');
+            submitButton.setAttribute('type', 'submit');
+            submitButton.classList.add('btn', 'btn-primary');
+            submitButton.textContent = 'Enviar';
+
+            var backButton = document.createElement('a');
+            backButton.setAttribute('href', '/Home/Index');
+            backButton.classList.add('btn', 'btn-secondary');
+            backButton.textContent = 'Voltar';
+
+            buttonDiv.appendChild(submitButton);
+            buttonDiv.appendChild(backButton);
+
+            form.appendChild(buttonDiv);
+
+            formContainer.appendChild(form);
+
+
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+
+                }
+                form.classList.add('was-validated');
+            });
+        }
+
+        createForm();
+    });
+</script>

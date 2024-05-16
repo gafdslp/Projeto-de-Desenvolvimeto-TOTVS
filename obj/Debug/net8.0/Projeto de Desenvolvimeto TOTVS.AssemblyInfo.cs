@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Projeto de Desenvolvimeto TOTVS")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e8def66c91c887c650e917380364907145dee1bc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ff0efd0705756c8aa41997186b15eee9657ca305")]
 [assembly: System.Reflection.AssemblyProductAttribute("Projeto de Desenvolvimeto TOTVS")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Projeto de Desenvolvimeto TOTVS")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
