@@ -1,88 +1,93 @@
-﻿@{
+﻿
+@model CadastrosModel
+
+@{
     ViewData["Title"] = "Criar Cadastro";
 }
 
-<form class="row g-3 needs-validation" novalidate>
+<div class="text-center">
+    <h1 class="display-4">Criar Cadastro </h1>
+</div>
+
+<form class="row g-3 needs-validation" method="post" asp-controller="Home" asp-action="create" novalidate>
 
     @* INPUT: NOME *@
+
     <div class="col-md-6 form-group">
-        <label for="validarNome" class="form-label">Nome</label>
-        <input type="text" class="form-control" id="validarNome" value="" minlength="3" required>
-        <div class="valid-feedback">
-            Tudo certo!
-        </div>
-        <div class="invalid-feedback">
-            O nome deve ter no mínimo 3 caracteres.
-        </div>
+
+        <label for="Nome" class="form-label">Nome</label>
+        <input type="text" class="form-control" asp-for="Nome" id="Nome" value="" minlength="3" required>
+        <div class="valid-feedback">Tudo certo!</div>
+        <div class="invalid-feedback">O nome deve ter no mínimo 3 caracteres.</div>
+
     </div>
 
     @* INPUT: SOBRENOME *@
+
     <div class="col-md-6 form-group">
-        <label for="validarSobrenome" class="form-label">Sobrenome</label>
-        <input type="text" class="form-control" id="validarSobrenome" value="" minlength="3" required>
-        <div class="valid-feedback">
-            Perfeito!
-        </div>
-        <div class="invalid-feedback">
-            O sobrenome deve ter no mínimo 3 caracteres.
-        </div>
+
+        <label for="Sobrenome" class="form-label">Sobrenome</label>
+        <input type="text" class="form-control" asp-for="Sobrenome" id="Sobrenome" value="" minlength="3" required>
+        <div class="valid-feedback">Perfeito!</div>
+        <div class="invalid-feedback">O sobrenome deve ter no mínimo 3 caracteres.</div>
+
     </div>
 
     @* INPUT: DATA DE NASCIMENTO *@
+
     <div class="col-md-6 form-group">
-        <label for="validarEmail" class="form-label">Email</label>
-        <input type="email" class="form-control" id="validarEmail" value="" required>
-        <div class="valid-feedback">
-            Email válido!
-        </div>
-        <div class="invalid-feedback">
-            Ops, parece que você não digitou um email válido!
-        </div>
+
+        <label for="Email" class="form-label">Email</label>
+        <input type="email" class="form-control" asp-for="Email" id="Email" value="" required>
+        <div class="valid-feedback">Email válido!</div>
+        <div class="invalid-feedback">Ops, parece que você não digitou um email válido!</div>
+
     </div>
 
     @* INPUT: EMAIL *@
+
     <div class="col-md-6 form-group">
-        <label for="validarDataNascimento" class="form-label">Data de nascimento</label>
-        <input type="date" class="form-control" id="validarDataNascimento" value="" required>
-        <div class="valid-feedback">
-            Pronto!
-        </div>
-        <div class="invalid-feedback">
-            Ops, este campo não pode ficar vazio!
-        </div>
+
+        <label for="DataNascimento" class="form-label">Data de nascimento</label>
+        <input type="date" class="form-control" asp-for="Data" id="DataNascimento" value="" required>
+        <div class="valid-feedback">Pronto!</div>
+        <div class="invalid-feedback">Ops, este campo não pode ficar vazio!</div>
+
     </div>
 
     @* INPUT: SENHA *@
+
     <div class="col-md-6 form-group">
-        <label for="validarSenha" class="form-label">Senha</label>
-        <input type="password" class="form-control" id="validarSenha" value="" minlength="6" required>
-        <div class="valid-feedback">
-            Sua senha está ótima!
-        </div>
-        <div class="invalid-feedback">
-            A senha deve ter no mínimo 6 caracteres.
-        </div>
+
+        <label for="Senha" class="form-label">Senha</label>
+        <input type="password" class="form-control" id="Senha" asp-for="Senha" value="" minlength="6" required>
+        <div class="valid-feedback">Sua senha está ótima!</div>
+        <div class="invalid-feedback"> A senha deve ter no mínimo 6 caracteres.</div>
+
     </div>
 
     @* INPUT: CONFIRMAR SENHA *@
+
     <div class="col-md-6 form-group">
-        <label for="validarConfirmarSenha" class="form-label">Confirmar Senha</label>
-        <input type="password" class="form-control" id="validarConfirmarSenha" value="" minlength="6" required>
-        <div class="valid-feedback">
-            As senhas são iguais!
-        </div>
-        <div class="invalid-feedback">
-            As senhas parecem não serem iguais!
-        </div>
+
+        <label for="ConfirmarSenha" class="form-label">Confirmar Senha</label>
+        <input type="password" class="form-control" id="ConfirmarSenha" value="" minlength="6" required>
+        <div class="valid-feedback"> As senhas são iguais! </div>
+        <div class="invalid-feedback"> As senhas parecem não serem iguais!</div>
+
     </div>
 
     @* INPUT: BOTÂO ENVIAR *@
+
     <div class="col-12 d-flex justify-content-between">
+
         <button class="btn btn-primary" type="submit">Enviar</button>
         <a class="btn btn-secondary" asp-controller="Home" asp-action="Index">Voltar</a>
+
     </div>
 
 </form>
+
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -94,18 +99,16 @@
                 event.stopPropagation();
             }
 
-            var senha = document.getElementById('validarSenha').value;
-            var confirmarSenha = document.getElementById('validarConfirmarSenha').value;
+            var senha = document.getElementById('Senha').value;
+            var confirmarSenha = document.getElementById('ConfirmarSenha').value;
 
             if (senha !== confirmarSenha) {
-                document.getElementById('validarConfirmarSenha').setCustomValidity('As senhas não coincidem.');
+                document.getElementById('ConfirmarSenha').setCustomValidity('As senhas não coincidem.');
             } else {
-                document.getElementById('validarConfirmarSenha').setCustomValidity('');
+                document.getElementById('ConfirmarSenha').setCustomValidity('');
             }
 
             form.classList.add('was-validated');
         }, false);
     });
 </script>
-
-

@@ -1,21 +1,27 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Projeto_de_Desenvolvimeto_TOTVS;
+using Projeto_de_Desenvolvimeto_TOTVS.Data;
 using Projeto_de_Desenvolvimeto_TOTVS.Models;
 
-namespace CProjeto_de_Desenvolvimeto_TOTVS.Controllers;
+namespace Projeto_de_Desenvolvimeto_TOTVS.Controllers;
 
-public class HomeController : Controller
+    public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
 
-    public HomeController(ILogger<HomeController> logger)
+    readonly private ApplicationDbContext _db;
+
+    public HomeController(ApplicationDbContext db)
     {
-        _logger = logger;
+        _db = db;
     }
+
 
     public IActionResult Index()
     {
-        return View();
+
+        IEnumerable<CadastrosModel> cadastros = _db.Cadastros;
+        return View(cadastros);
     }
 
     public IActionResult Privacy()
@@ -23,8 +29,25 @@ public class HomeController : Controller
         return View();
     }
 
+
     public IActionResult Create()
     {
+        return View();
+    }
+
+    [HttpPost]
+    public IActionResult Create(CadastrosModel cadastros)
+    {
+
+        if (ModelState.IsValid)
+        {
+            _db.Cadastros.Add(cadastros);
+            _db.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
+
         return View();
     }
 
@@ -32,7 +55,6 @@ public class HomeController : Controller
     {
         return View();
     }
-
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()

@@ -1,6 +1,6 @@
 ﻿namespace Projeto_de_Desenvolvimeto_TOTVS;
 
-public class CadastroModel
+public class CadastrosModel
 {
     public int Id { get; set; }
     public string Nome { get; set; }

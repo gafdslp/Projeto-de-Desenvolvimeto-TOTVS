@@ -134,3 +134,4 @@ C:\Users\guigu\OneDrive\Área de Trabalho\ASP.NET\Projeto de Desenvolvimeto TOTV
 C:\Users\guigu\OneDrive\Área de Trabalho\ASP.NET\Projeto de Desenvolvimeto TOTVS\Projeto de Desenvolvimeto TOTVS\obj\Debug\net8.0\Projeto de Desenvolvimeto TOTVS.pdb
 C:\Users\guigu\OneDrive\Área de Trabalho\ASP.NET\Projeto de Desenvolvimeto TOTVS\Projeto de Desenvolvimeto TOTVS\obj\Debug\net8.0\Projeto de Desenvolvimeto TOTVS.genruntimeconfig.cache
 C:\Users\guigu\OneDrive\Área de Trabalho\ASP.NET\Projeto de Desenvolvimeto TOTVS\Projeto de Desenvolvimeto TOTVS\obj\Debug\net8.0\ref\Projeto de Desenvolvimeto TOTVS.dll
+C:\Users\guigu\OneDrive\Área de Trabalho\ASP.NET\Projeto de Desenvolvimeto TOTVS\Projeto de Desenvolvimeto TOTVS\obj\Debug\net8.0\Projeto de Desenvolvimeto TOTVS.sourcelink.json

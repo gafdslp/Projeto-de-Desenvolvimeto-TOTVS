@@ -9,5 +9,5 @@ public class ApplicationDbContext : DbContext
     {
     }
 
-    public DbSet<CadastroModel> Cadastros { get; set; }
+    public DbSet<CadastrosModel> Cadastros { get; set; }
 }

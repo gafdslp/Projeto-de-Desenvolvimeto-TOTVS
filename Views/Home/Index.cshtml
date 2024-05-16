@@ -1,8 +1,50 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model IEnumerable<CadastrosModel>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+@{ ViewData["Title"] = "Pagina Inicial"; }
+
+<div class="container">
+
+    <div class="d-flex justify-content-between align-items-center mb-5">
+
+        <h1>Cadastros</h1>
+        <a class="btn btn-success mx-2" asp-controller="Home" asp-action="Create">Cadastrar novo cliente</a>
+
+    </div>
+
+
+    <table class="table">
+
+        <thead>
+
+            <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Sobrenome</th>
+                <th scope="col">Data de Nascimento</th>
+                <th scope="col">Email</th>
+                <th scope="col">Senha</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            @if(Model != null)
+            {
+
+                @foreach (var cadastro in Model)
+                {
+                    <tr>
+                        <th scope="row">@cadastro.Nome</th>
+                        <td>@cadastro.Sobrenome</td>
+                        <td>@cadastro.Data</td>
+                        <td>@cadastro.Email</td>
+                        <td>@cadastro.Senha</td>
+                    </tr>
+                }
+            }
+
+        </tbody>
+
+    </table>
+
+</div
